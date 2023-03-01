@@ -1,0 +1,27 @@
+.empty-cart {
+    height: 700px;
+}
+
+td > img {
+    height: 100px;
+    width: 100px;
+}
+
+.addtocart {
+    width: 400px;
+    height: 400px;
+}
+
+.cart-page {
+    position: relative;
+    top: 3.8rem;
+}
+.cart-page-content {
+    position: relative;
+    top: 6rem;
+    border-radius: 10px;
+}
+
+td > .btn {
+    width: 150px;
+}

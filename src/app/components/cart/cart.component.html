@@ -1,0 +1,60 @@
+<ng-container *ngIf="products.length != 0">
+    <div class="cart-page-content container bg-light">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Image</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quanity</th>
+                <th scope="col">Total</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of products; let i = index; ">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{item.title}}</td>
+                <td><img src="{{item.image}}" alt="{{item.title}}"></td>
+                <td>{{item.description}}</td>
+                <td>${{item.price}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.total}}</td>
+                <td>
+                    <button (click)="removeItem(item)"><i class="fa-solid fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+                <td><button (click)="emptyCart()" class="btn btn-danger">Clear Cart</button></td>
+                <td><button routerLinkActive="active" routerLink="/shop" ariaCurrentWhenActive="page" class="btn btn-dark">Explore more</button></td>
+                <td><button class="btn btn-success">
+                    <span>Place Order</span></button></td>
+                    <td>
+                        <strong>Grand Total: {{grandTotal}}</strong>
+                    </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+    <div class=" cart-page empty-cart card text-center bg-warning">
+        <div class="card-header bg-success text-light">Cart</div>
+        <div class="card-body mx-auto text-center align-items-center">
+          <h5 class="card-title">Your Cart is Empty</h5>
+          <p class="card-text">
+            To proceed with the purchase, please place the item in your shopping cart.
+          </p>
+          <p>
+            <img class="addtocart" src="/assets/3516853.svg" alt="AddtoCart">
+          </p>
+          <a routerLinkActive="active" routerLink="/shop" ariaCurrentWhenActive="page"  class="btn btn-dark" style="width: 140px;">Shop Now</a>
+        </div>
+        <div class="card-footer text-danger">Empty</div>
+      </div>
+
+</ng-container>
