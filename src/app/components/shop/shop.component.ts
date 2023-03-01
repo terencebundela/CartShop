@@ -5,15 +5,14 @@ import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent {
-
   constructor(private fakeStore: FakeStoreService, private cart: CartService) {}
 
   database: Products[] = [];
 
-  products: any = []
+  products: any = [];
 
   id!: number;
   category!: string;
@@ -25,18 +24,17 @@ export class ShopComponent {
 
   ngOnInit() {
     this.fakeStore.getProducts().subscribe((response: any) => {
-          console.log(response);
-          this.database = response;
+      console.log(response);
+      this.database = response;
 
-          this.database.forEach((a:any) => {
-            Object.assign(a,{quantity:1, total: a.price})
-          })
-        })
+      this.database.forEach((a: any) => {
+        Object.assign(a, { quantity: 1, total: a.price });
+      });
+    });
   }
 
-  
   addtocart(products: any) {
-    this.cart.addToCart(products)
+    this.cart.addToCart(products);
   }
 
   getProductDescription(id: number) {
@@ -45,5 +43,4 @@ export class ShopComponent {
       this.products = response;
     });
   }
-
 }

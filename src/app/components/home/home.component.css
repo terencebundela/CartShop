@@ -1,38 +1,36 @@
 .home-image {
-    z-index: -1;
+  z-index: -1;
 }
 
 .shop-img {
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 10px;
 }
 
 .main-content {
-    height: 33rem;
+  height: 33rem;
 }
 
-
 .app-description {
-    position: relative;
-    left: 100%;
-    /* top: 20%; */
-
+  position: relative;
+  left: 100%;
+  /* top: 20%; */
 }
 
 .btns {
-    position: relative;
-    left: 53%;
-    /* top: 100%; */
-    height: 30%;
+  position: relative;
+  left: 53%;
+  /* top: 100%; */
+  height: 30%;
 }
 
 .main-content > .row > .col > h1 {
-    position: relative;
-    top: 60%;
-    font-family: 'Climate Crisis', cursive;
+  position: relative;
+  top: 60%;
+  font-family: "Climate Crisis", cursive;
 }
 
 .background-image {
-    position: relative;
-    top: 3rem;
+  position: relative;
+  top: 3rem;
 }

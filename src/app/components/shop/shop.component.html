@@ -1,45 +1,54 @@
 <div class="container-fluid mx-auto mt-5">
-    <div class="row">
-        <div class="col-3 mt-5" *ngFor="let products of database; let i = index">
-          <div class="card h-100 shadow-lg" style="width:18rem;">
-            <img class="card-img-top" src="{{ products.image }}" alt="{{ products.title }}"/>
-            <div class="card-body">
-              <h5 class="card-title">{{ products.title }}</h5>
-              <p class="card-text">{{ products.price | currency }}</p>
-              <a (click)="addtocart(products)" class="btn btn-warning">Add to Cart</a>
-              <button
-                (click)="getProductDescription(products.id)"
-                type="button"
-                class="btn btn-link float-end"
-                data-bs-toggle="modal"
-                data-bs-target="#productModal"
-              >
-                <i class="fas fa-info-circle"></i>
-              </button>
-            </div>
-          </div>
+  <div class="row">
+    <div
+      class="col col-sm-6 col-md-4 col-lg-2 mt-5 mx-5"
+      *ngFor="let products of database; let i = index"
+    >
+      <div class="card h-100 shadow-lg" style="width: 18rem">
+        <img
+          class="card-img-top img-fluid"
+          src="{{ products.image }}"
+          alt="{{ products.title }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ products.title }}</h5>
+          <p class="card-text">{{ products.price | currency }}</p>
+          <a href="#" (click)="addtocart(products)" class="btn btn-warning"
+            >Add to Cart</a
+          >
+          <button
+            (click)="getProductDescription(products.id)"
+            type="button"
+            class="btn btn-link float-end"
+            data-bs-toggle="modal"
+            data-bs-target="#productModal"
+          >
+            <i class="fas fa-info-circle"></i>
+          </button>
         </div>
       </div>
+    </div>
+  </div>
 </div>
 
 <!-- Modal HTML code -->
-<!-- <div
-  class="modal fade"
-  id="productModal"
+<div
+  class="modal fade shadow-lg"
   tabindex="-1"
+  id="productModal"
   aria-labelledby="productModalLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header d-grid">
-        <h5 class="modal-title" id="productModalLabel">{{ products.title }}</h5>
+      <div class="modal-header">
+        <h5 class="modal-title">{{ products.title }}</h5>
         <button
-        type="button"
-        class="btn-close text-end"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <img
@@ -48,36 +57,14 @@
           alt="{{ products.titile }}"
           width="100px;"
         />
-        {{ products.description }}
+        <p>{{ products.description }}</p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-dark">Buy Now</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-dark">Buy Now</button>
       </div>
     </div>
   </div>
-</div> -->
-
-
-<div class="modal fade shadow-lg" tabindex="-1" id="productModal" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">{{ products.title }}</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <img
-          class="img-fluid text-center"
-          src="{{ products.image }}"
-          alt="{{ products.titile }}"
-          width="100px;"
-        />
-          <p>{{ products.description }}</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-dark">Buy Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
