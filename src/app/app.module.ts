@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   { path: 'shop', component: ShopComponent },
   {path: 'cart', component: CartComponent},
-  {path: '**', redirectTo: '', pathMatch: 'full'}
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
