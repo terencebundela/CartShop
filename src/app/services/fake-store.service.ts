@@ -18,4 +18,5 @@ export class FakeStoreService {
   getProductById(id: number): Observable<Users> {
     return this.http.get<Users>(`${this.getUrl}/` + id);
   }
+
 }
