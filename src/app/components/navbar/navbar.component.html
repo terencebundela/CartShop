@@ -5,8 +5,7 @@
     <!-- Brand name and cart icon -->
     <a
       routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      routerLink="/"
+      routerLink="/home"
       ariaCurrentWhenActive="page"
       class="navbar-brand"
       href="#"
@@ -32,6 +31,7 @@
           <a
             routerLinkActive="active"
             routerLink="/cart"
+            ariaCurrentWhenActive="page"
             class="nav-link"
             href="#"
           >
@@ -49,6 +49,7 @@
           <a
             routerLinkActive="active"
             routerLink="/shop"
+            ariaCurrentWhenActive="page"
             class="nav-link"
             href="#"
             >Shop</a

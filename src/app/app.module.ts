@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   { path: 'shop', component: ShopComponent },
   {path: 'cart', component: CartComponent}
