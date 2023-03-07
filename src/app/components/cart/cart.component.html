@@ -20,7 +20,10 @@
           <td><img src="{{ item.image }}" alt="{{ item.title }}" /></td>
           <td>{{ item.description }}</td>
           <td>${{ item.price }}</td>
-          <td>{{ item.quantity }}</td>
+          <button (click)="decreaseQuantity(item)">-</button>
+  {{ item.quantity }}
+  <button (click)="increaseQuantity(item)">+</button>
+
           <td>{{ item.total }}</td>
           <td>
             <button (click)="removeItem(item)">
@@ -60,8 +63,8 @@
 </ng-container>
 
 <ng-container *ngIf="products.length == 0">
-  <div class="cart-page empty-cart card text-center bg-warning">
-    <div class="card-header bg-success text-light">Cart</div>
+  <div class="cart-page empty-cart card text-center" style="background-color: #fdefb3;">
+    <div class="card-header text-light" style="background-color: #78a832;">Cart</div>
     <div class="card-body mx-auto text-center align-items-center">
       <h5 class="card-title">Your Cart is Empty</h5>
       <p class="card-text">
@@ -76,7 +79,7 @@
         routerLink="/shop"
         ariaCurrentWhenActive="page"
         class="btn btn-dark"
-        style="width: 140px"
+        style="width: 140px; background-color: #ff3c5c; border-radius: 0; border: none; color: #fdefb3;"
         >Shop Now</a
       >
     </div>

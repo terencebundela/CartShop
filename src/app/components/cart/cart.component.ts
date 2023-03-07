@@ -18,6 +18,21 @@ export class CartComponent {
     });
   }
 
+  decreaseQuantity(item: any) {
+    if (item.quantity > 1) {
+      item.quantity--;
+      item.total = item.price * item.quantity;
+      this.cart.productList.next([...this.cart.cartItemList]);
+    }
+  }
+  
+  increaseQuantity(item: any) {
+    item.quantity++;
+    item.total = item.price * item.quantity;
+    this.cart.productList.next([...this.cart.cartItemList]);
+  }
+  
+
   removeItem(item: any) {
     this.cart.removeCartItem(item);
   }

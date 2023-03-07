@@ -19,11 +19,30 @@ export class CartService {
     this.productList.next(product);
   }
 
+  // addToCart(product: any) {
+  //   this.cartItemList.push(product);
+  //   this.productList.next(this.cartItemList);
+  //   this.getTotalPrice();
+  //   console.log(this.cartItemList);
+  // }
+
   addToCart(product: any) {
-    this.cartItemList.push(product);
+    let productExists = false;
+    for (let i in this.cartItemList) {
+      if (this.cartItemList[i].id === product.id) {
+        this.cartItemList[i].quantity++;
+        this.cartItemList[i].total = this.cartItemList[i].quantity * this.cartItemList[i].price;
+        productExists = true;
+        break;
+      }
+    }
+    if (!productExists) {
+      product.quantity = 1;
+      product.total = product.price;
+      this.cartItemList.push(product);
+    }
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-    console.log(this.cartItemList);
   }
 
   getTotalPrice(): number {
